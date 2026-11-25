@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "585855279143",
+    "project_id": "chambaexpress-6618b",
+    "storage_bucket": "chambaexpress-6618b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:585855279143:android:e4fce2300d0eccaaea2e02",
+        "android_client_info": {
+          "package_name": "com.example.chambaexpress"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALLDeeK-XiZdz2mKz2t9qm6Enhzt4Wz4U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
