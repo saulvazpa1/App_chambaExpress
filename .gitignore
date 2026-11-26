@@ -58,3 +58,18 @@ node_modules/
 scripts/serviceAccountKey.json
 # Archivos generados de Android / Gradle
 /android/build/
+# Configuración local de Android
+/android/local.properties
+/android/key.properties
+
+# Archivos de variables de entorno
+.env
+.env.*
+
+# Llaves de firma
+*.jks
+*.keystore
+
+# Archivos temporales de Dart
+.flutter-plugins
+.packages

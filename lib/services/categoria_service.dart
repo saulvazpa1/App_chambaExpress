@@ -1,5 +1,6 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 
 import '../models/categoria.dart';
 
@@ -11,17 +12,22 @@ class CategoriaService {
 
   // OBTENER CATEGORÍAS ACTIVAS
   Future<List<Categoria>> obtenerCategorias() async {
-    final resultado = await _categorias
-        .where('activa', isEqualTo: true)
-        .orderBy('nombre')
-        .get();
+    try {
+      final resultado = await _categorias
+          .where('activa', isEqualTo: true)
+          .orderBy('nombre')
+          .get();
 
-    return resultado.docs.map((documento) {
-      return Categoria.fromMap(
-        documento.id,
-        documento.data(),
-      );
-    }).toList();
+      return resultado.docs.map((documento) {
+        return Categoria.fromMap(
+          documento.id,
+          documento.data(),
+        );
+      }).toList();
+    } catch (e) {
+      debugPrint('ERROR AL CARGAR CATEGORÍAS: $e');
+      rethrow;
+    }
   }
 
   // OBTENER UNA CATEGORÍA

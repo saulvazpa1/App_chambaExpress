@@ -1,8 +1,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+
 import 'firebase_options.dart';
 import 'screens/login_screen.dart';
+import 'theme/app_theme.dart';
+import 'widgets/estado_conexion.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,35 +25,14 @@ class ChambaExpressApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'ChambaExpress',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepOrange,
-        ),
-        useMaterial3: true,
-      ),
+      theme: AppTheme.lightTheme,
       home: const LoginScreen(),
-    );
-  }
-}
 
-class InicioScreen extends StatelessWidget {
-  const InicioScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('ChambaExpress'),
-      ),
-      body: const Center(
-        child: Text(
-          '¡Firebase conectado correctamente!',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
+      builder: (context, child) {
+        return EstadoConexion(
+          child: child ?? const SizedBox.shrink(),
+        );
+      },
     );
   }
 }
