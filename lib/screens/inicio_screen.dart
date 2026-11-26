@@ -7,6 +7,7 @@ import 'login_screen.dart';
 import 'solicitudes/crear_solicitud_screen.dart';
 import 'solicitudes/mis_solicitudes_screen.dart';
 import 'trabajador/trabajador_screen.dart';
+import 'cliente/solicitudes_actuales_screen.dart';
 
 class InicioScreen extends StatelessWidget {
   final Usuario usuario;
@@ -103,7 +104,7 @@ class InicioScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => const MisSolicitudesScreen(),
+                      builder: (_) => const SolicitudesActualesScreen(),
                     ),
                   );
                 },
